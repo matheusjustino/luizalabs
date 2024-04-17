@@ -9,51 +9,57 @@ Este projeto tem como finalidade fornecer uma solução para um problema de norm
 ## Estruturas de entrada e saída
 - ### Arquivo de entrada
 
-	O arquivo de entrada pode possuir várias linhas que seguem o seguinte formato: ``0000000070                              Palmer Prosacco00000007530000000003     1836.7420210308``. A partir desse formato deve-se extrair as seguintes informações: **user_id**, **name**, **order_id**, **product_id**, **value** e **date**, esses dados são salvos no banco de dados e então transformados para a estrutura de saída
+O arquivo de entrada pode possuir várias linhas que seguem o seguinte formato:
+``0000000070                              Palmer Prosacco00000007530000000003     1836.7420210308``.
+A partir desse formato deve-se extrair as seguintes informações: **user_id**, **name**, **order_id**, **product_id**, **value** e **date**, esses dados são salvos no banco de dados e então transformados para a estrutura de saída.
+
+**`Um arquivo para testes pode ser encontrado em src/modules/orders/test/mocks/data_1.txt`**
 
 - ## Dados de saída
-	```json
-		[
-			{
-				"user_id": 1,
-				"name": "Zarelli",
-				"orders": [
-					{
-						"order_id": 123,
-						"total": "1024.48",
-						"date": "2021-12-01",
-						"products": [
-							{
-								"product_id": 111,
-								"value": "512.24"
-							},
-							{
-								"product_id": 122,
-								"value": "512.24"
-							}
-						]
-					}
-				]
-			},
-		]
-	```
+
+```json
+	[
+		{
+			"user_id": 1,
+			"name": "Zarelli",
+			"orders": [
+				{
+					"order_id": 123,
+					"total": "1024.48",
+					"date": "2021-12-01",
+					"products": [
+						{
+							"product_id": 111,
+							"value": "512.24"
+						},
+						{
+							"product_id": 122,
+							"value": "512.24"
+						}
+					]
+				}
+			]
+		},
+	]
+```
 
 - ## Dados salvos no banco
-	Os dados salvos no banco seguem a estrutura de cada linha do arquivo de entrada
 
-	```json
-		{
-			id: '000cf75e-70ea-40bb-b3a8-d2c522331fd6',
-			user_id: 99,
-			name: 'Junita Jast',
-			order_id: 1061,
-			product_id: 3,
-			value: '1930.69',
-			date: '2021-08-18',
-			createdAt: new Date('2024-04-17T03:58:27.833Z'),
-			updatedAt: new Date('2024-04-17T03:58:27.833Z'),
-		},
-	```
+Os dados salvos no banco seguem a estrutura de cada linha do arquivo de entrada
+
+```json
+	{
+		id: '000cf75e-70ea-40bb-b3a8-d2c522331fd6',
+		user_id: 99,
+		name: 'Junita Jast',
+		order_id: 1061,
+		product_id: 3,
+		value: '1930.69',
+		date: '2021-08-18',
+		createdAt: new Date('2024-04-17T03:58:27.833Z'),
+		updatedAt: new Date('2024-04-17T03:58:27.833Z'),
+	},
+```
 
 ## Documentação
 
